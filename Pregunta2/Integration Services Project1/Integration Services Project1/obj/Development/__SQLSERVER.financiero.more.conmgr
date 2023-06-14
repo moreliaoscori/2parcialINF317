@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="__SQLSERVER.financiero.more"
+  DTS:DTSID="{F8B34828-7C62-4BD0-9A29-C16687380AD7}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.\SQLSERVER;User ID=more;Initial Catalog=financiero;Application Name=SSIS-Integration Services Project1-{F8B34828-7C62-4BD0-9A29-C16687380AD7}.\SQLSERVER.financiero.more;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXXUX7416Nkyq4f2or+bwxgAAAAACAAAAAAAQZgAAAAEAACAAAAA2TBxUjUcxh5NIhWBeI2ey/DcdV9+nd3i+5ZyuHbaWfQAAAAAOgAAAAAIAACAAAABt/Cvpx4FTHeeo8lPF9p5eZJvj+0cf8uXtmgOmiKhqMHAAAACuE8ncB6hT4tSo51ynrmBKMMGeamU2MSxoieqs9SeLbu2fxKCaCrj7g3Pk5uwok0CwxEsLntt1M67DaBEHHIjjTJhoEgQLOOWV5IyAgR9a9sGo9QmTbGF+OZlWqp7IJQjrCQZLXzvLBpUH6/uIh0/gQAAAAOUiV/nfkiemNk1rNxbPatQG94VegF8XR3kc/+LxFR67gXuVeVaoR0EGOJHS/DFsnijTxsz4PFRe7SZQtdNDtE8=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

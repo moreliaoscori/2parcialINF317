@@ -1,0 +1,131 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/13/2023 5:34:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MORE-PC"
+  DTS:CreatorName="MORE-PC\Morelia"
+  DTS:DTSID="{8A00EC79-8169-49A9-B1BA-05B660E15413}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="16394"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{5A45935F-DE9F-44D8-8555-3CF57B96A46B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLSERVER.financiero.more1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{07EF39E3-4158-402A-8352-EE71FC90EF75}"
+      DTS:ObjectName=".\SQLSERVER.financiero.more1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.\SQLSERVER;User ID=more;Initial Catalog=financiero;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXXUX7416Nkyq4f2or+bwxgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB1hgaSRamQIZ5g04CeJ6s3a/Y9lm8c5VQYPbITBikngwAAAAAOgAAAAAIAACAAAABKVuKD/wk8Ney4/kFu8oyyjDLJ8XBeFIv6LIeWnXVHRRAAAABq9l1MSXi8ZhaeImBS94FTQAAAAOPwujQUlMHuUjUp2toK+TEFyfyGR6rXlqM9HQ7voYteCL1FhEQVnjzjTvqVst+T/SrxFa4xuNTgYAWdKG836co</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{106F0B61-9A49-43CD-8D70-7F03B070D177}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{07EF39E3-4158-402A-8352-EE71FC90EF75}"
+          SQLTask:SqlStatementSource="CREATE TABLE Cliente (&#xA;  ID_Cliente INT PRIMARY KEY,&#xA;  Nombre VARCHAR(50),&#xA;  Apellido VARCHAR(50),&#xA;  Edad INT,&#xA;  Correo VARCHAR(100)&#xA;);&#xA;&#xA;CREATE TABLE Cuenta (&#xA;  ID_Cuenta INT PRIMARY KEY,&#xA;  ID_Cliente INT,&#xA;  Tipo VARCHAR(50),&#xA;  Saldo DECIMAL(10, 2),&#xA;  FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)&#xA;);&#xA;&#xA;CREATE TABLE Transaccion (&#xA;  ID_Transaccion INT PRIMARY KEY,&#xA;  ID_Cuenta INT,&#xA;  Tipo VARCHAR(50),&#xA;  Monto DECIMAL(10, 2),&#xA;  Fecha DATETIME,&#xA;  FOREIGN KEY (ID_Cuenta) REFERENCES Cuenta(ID_Cuenta)&#xA;);&#xA;&#xA;CREATE TABLE Prestamo (&#xA;  ID_Prestamo INT PRIMARY KEY,&#xA;  ID_Cliente INT,&#xA;  Monto DECIMAL(10, 2),&#xA;  Interes DECIMAL(4, 2),&#xA;  Fecha_inicio DATE,&#xA;  Fecha_fin DATE,&#xA;  FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)&#xA;);&#xA;&#xA;CREATE TABLE Ingreso (&#xA;  ID_Ingreso INT PRIMARY KEY,&#xA;  ID_Cliente INT,&#xA;  Tipo VARCHAR(50),&#xA;  Monto DECIMAL(10, 2),&#xA;  Fecha DATE,&#xA;  FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)&#xA;);&#xA;&#xA;CREATE TABLE Gasto (&#xA;  ID_Gasto INT PRIMARY KEY,&#xA;  ID_Cliente INT,&#xA;  Categoria VARCHAR(50),&#xA;  Monto DECIMAL(10, 2),&#xA;  Fecha DATE,&#xA;  FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)&#xA;);&#xA;&#xA;CREATE TABLE Banco (&#xA;  ID_Banco INT PRIMARY KEY,&#xA;  Nombre VARCHAR(50),&#xA;  Direccion VARCHAR(100),&#xA;  Telefono VARCHAR(20)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C4BA5E7D-7479-4E98-A660-0E1750B9130F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{07EF39E3-4158-402A-8352-EE71FC90EF75}"
+          SQLTask:SqlStatementSource="-- Tabla: Cliente&#xA;INSERT INTO Cliente (ID_Cliente, Nombre, Apellido, Edad, Correo)&#xA;VALUES&#xA;  (1, 'Juan', 'Pérez', 35, 'juanperez@example.com'),&#xA;  (2, 'María', 'López', 42, 'marialopez@example.com'),&#xA;  (3, 'Pedro', 'Gómez', 28, 'pedrogomez@example.com'),&#xA;  (4, 'Ana', 'Torres', 31, 'anatorres@example.com'),&#xA;  (5, 'Luis', 'Rodríguez', 39, 'luisrodriguez@example.com'),&#xA;  (6, 'Vladimir', 'Pérez', 29, 'vladimirperez@example.com'),&#xA;  (7, 'Fernanda', 'López', 42, 'fernandalopez@example.com'),&#xA;  (8, 'Laura', 'Gómez', 28, 'lauragomez@example.com'),&#xA;  (9, 'Lucas', 'Torres', 31, 'lucastorres@example.com'),&#xA;  (10, 'Marcos', 'Rodríguez', 39, 'marcosrodriguez@example.com');&#xA;&#xA;-- Tabla: Cuenta&#xA;INSERT INTO Cuenta (ID_Cuenta, ID_Cliente, Tipo, Saldo)&#xA;VALUES&#xA;  (1, 1, 'Ahorros', 1000.00),&#xA;  (2, 2, 'Corriente', 5000.00),&#xA;  (3, 3, 'Ahorros', 2500.00),&#xA;  (4, 4, 'Corriente', 3000.00),&#xA;  (5, 5, 'Ahorros', 2000.00),&#xA;  (6, 6, 'Ahorros', 1000.00),&#xA;  (7, 7, 'Corriente', 5000.00),&#xA;  (8, 8, 'Ahorros', 2500.00),&#xA;  (9, 9, 'Corriente', 3000.00),&#xA;  (10, 10, 'Ahorros', 2000.00);&#xA;&#xA;-- Tabla: Transacción&#xA;INSERT INTO Transaccion (ID_Transaccion, ID_Cuenta, Tipo, Monto, Fecha)&#xA;VALUES&#xA;  (1, 1, 'Depósito', 500.00, '2023-05-01 09:30:00'),&#xA;  (2, 2, 'Retiro', 1000.00, '2023-05-02 14:45:00'),&#xA;  (3, 3, 'Depósito', 1000.00, '2023-05-03 11:20:00'),&#xA;  (4, 4, 'Retiro', 500.00, '2023-05-04 16:10:00'),&#xA;  (5, 5, 'Depósito', 800.00, '2023-05-05 13:55:00'),&#xA;  (6, 6, 'Depósito', 500.00, '2023-05-01 09:30:00'),&#xA;  (7, 7, 'Retiro', 1000.00, '2023-05-02 14:45:00'),&#xA;  (8, 8, 'Depósito', 1000.00, '2023-05-03 11:20:00'),&#xA;  (9, 9, 'Retiro', 500.00, '2023-05-04 16:10:00'),&#xA;  (10, 10, 'Depósito', 800.00, '2023-05-05 13:55:00');&#xA;&#xA;-- Tabla: Préstamo&#xA;INSERT INTO Prestamo (ID_Prestamo, ID_Cliente, Monto, Interes, Fecha_inicio, Fecha_fin)&#xA;VALUES&#xA;  (100, 1, 5000.00, 0.1, '2022-03-15', '2023-03-15'),&#xA;  (200, 2, 10000.00, 0.08, '2023-01-10', '2024-01-10'),&#xA;  (300, 3, 3000.00, 0.12, '2023-05-01', '2024-05-01'),&#xA;  (400, 4, 7000.00, 0.09, '2022-11-20', '2023-11-20'),&#xA;  (500, 5, 2000.00, 0.15, '2023-02-05', '2024-02-05'),&#xA;  (600, 6, 5000.00, 0.1, '2022-03-15', '2023-03-15'),&#xA;  (700, 7, 10000.00, 0.08, '2023-01-10', '2024-01-10'),&#xA;  (800, 8, 3000.00, 0.12, '2023-05-01', '2024-05-01'),&#xA;  (900, 9, 7000.00, 0.09, '2022-11-20', '2023-11-20'),&#xA;  (1000, 10, 2000.00, 0.15, '2023-02-05', '2024-02-05');&#xA;&#xA;-- Tabla: Ingreso&#xA;INSERT INTO Ingreso (ID_Ingreso, ID_Cliente, Tipo, Monto, Fecha)&#xA;VALUES&#xA;  (11, 1, 'Salario', 2500.00, '2023-05-01'),&#xA;  (21, 2, 'Negocio', 500.00, '2023-05-02'),&#xA;  (31, 3, 'Alquiler', 800.00, '2023-05-03'),&#xA;  (41, 4, 'Salario', 3000.00, '2023-05-04'),&#xA;  (51, 5, 'Inversiones', 1500.00, '2023-05-05'),&#xA;  (61, 6, 'Salario', 2500.00, '2023-05-01'),&#xA;  (71, 7, 'Negocio', 500.00, '2023-05-02'),&#xA;  (81, 8, 'Alquiler', 800.00, '2023-05-03'),&#xA;  (91, 9, 'Salario', 3000.00, '2023-05-04'),&#xA;  (101, 10, 'Inversiones', 1500.00, '2023-05-05');&#xA;&#xA;-- Tabla: Gasto&#xA;INSERT INTO Gasto (ID_Gasto, ID_Cliente, Categoria, Monto, Fecha)&#xA;VALUES&#xA;  (12, 1, 'Alimentación', 200.00, '2023-05-01'),&#xA;  (22, 2, 'Transporte', 50.00, '2023-05-02'),&#xA;  (32, 3, 'Entretenimiento', 150.00, '2023-05-03'),&#xA;  (42, 4, 'Servicios', 100.00, '2023-05-04'),&#xA;  (52, 5, 'Ropa', 300.00, '2023-05-05'),&#xA;  (62, 6, 'Alimentación', 200.00, '2023-05-01'),&#xA;  (72, 7, 'Transporte', 50.00, '2023-05-02'),&#xA;  (82, 8, 'Entretenimiento', 150.00, '2023-05-03'),&#xA;  (92, 9, 'Servicios', 100.00, '2023-05-04'),&#xA;  (102, 10, 'Ropa', 300.00, '2023-05-05');&#xA;&#xA;-- Tabla: Banco&#xA;INSERT INTO Banco (ID_Banco, Nombre, Direccion, Telefono)&#xA;VALUES&#xA;  (13, 'Banco Central', 'Calle Principal 123', '+1 123-456-7890'),&#xA;  (23, 'Banco Comercial', 'Avenida Central 456', '+1 987-654-3210'),&#xA;  (33, 'Banco de Inversión', 'Plaza Mayor 789', '+1 555-123-4567'),&#xA;  (43, 'Banco Central', 'Calle Principal 123', '+1 123-456-7890'),&#xA;  (53, 'Banco Comercial', 'Avenida Central 456', '+1 987-654-3210'),&#xA;  (63, 'Banco de Inversión', 'Plaza Mayor 789', '+1 555-123-4567');&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DEA1918C-52F2-43F9-890C-13CB6B8D05D6}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task 1"
+      DTS:Value="2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="255.428575778494,69.7411774486819" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="245.714289898775,152.329413901068" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="334.571432838635,111.341177448682">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9882364523864"
+              Start="0,0"
+              End="0,33.4882364523864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4882364523864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,10.9394307261932,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
