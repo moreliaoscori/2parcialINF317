@@ -1,0 +1,105 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f8997db3-597a-4958-b3a9-8c8e32c31b0d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Financiero2</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Cliente Dim</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="3e6a5695-ca4f-4b1e-8ab9-94040cd11d48">
+          <ID>Cliente Dim</ID>
+          <Name>Cliente Dim</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2f3a75cf-2bb8-4cb6-aebf-b5f31a2a2d2f">
+            <DataSourceViewID>Financiero2</DataSourceViewID>
+            <TableID>dbo_Cliente_Dim</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fecha Dim</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="149799dc-7233-4424-a8a8-9219dbd9533e">
+          <ID>Fecha Dim</ID>
+          <Name>Fecha Dim</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9cdd6b6c-df96-4637-9c9a-6cb5e110abc1">
+            <DataSourceViewID>Financiero2</DataSourceViewID>
+            <TableID>dbo_Fecha_Dim</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Cuenta Dim</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="11e7e609-a06d-45fd-b6f6-ab7d3b9b044a">
+          <ID>Cuenta Dim</ID>
+          <Name>Cuenta Dim</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6d8cf4f5-b964-4850-9032-78081b5e718f">
+            <DataSourceViewID>Financiero2</DataSourceViewID>
+            <TableID>dbo_Cuenta_Dim</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Saldo Promedio Agregacion</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="58e6641b-bddc-45ce-af4e-a9e16f7eff67">
+          <ID>Saldo Promedio Agregacion</ID>
+          <Name>Saldo Promedio Agregacion</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="14b7bb13-7238-4a92-bacb-4e645e32eb6b">
+            <DataSourceViewID>Financiero2</DataSourceViewID>
+            <TableID>dbo_SaldoPromedio_Agregacion</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Transaccion Fact</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4cf473fa-cf68-4fb1-b181-6ddd154eb633">
+          <ID>Transaccion Fact</ID>
+          <Name>Transaccion Fact</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="34e8b6d1-1d0a-4e91-a9cd-fb51b5185692">
+            <DataSourceViewID>Financiero2</DataSourceViewID>
+            <TableID>dbo_Transaccion_Fact</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
